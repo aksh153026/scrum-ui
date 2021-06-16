@@ -8,22 +8,6 @@ pipeline {
     stages {
     
 
-
-        stage('SCM Checkout'){
-            steps {
-               git branch: 'main', credentialsId: 'b0e5e069-fefe-4f2e-8cbc-d05703a18d3d',url: 'https://github.com/aksh153026/front-end.git'
-
-            }
-        }
-        
-        stage ('Compile Stage') {
-            steps {
-                
-                bat "cd scrum-ui && ng build --prod"
-                echo 'Build Compile Successful'
-                }
-            }
-        
     
  stage ('Push image to sonartype nexus') { // take that image and push to artifactory
         
