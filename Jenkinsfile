@@ -8,7 +8,7 @@ pipeline {
     }
     stages {
     
-
+//hh
 
         stage('SCM Checkout'){
             steps {
