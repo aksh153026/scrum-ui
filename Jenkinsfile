@@ -6,7 +6,7 @@ pipeline {
         jdk 'jdk1.8' 
     }
     stages {
-    
+    //hi
 
     
  stage ('Push image to sonartype nexus') { // take that image and push to artifactory
