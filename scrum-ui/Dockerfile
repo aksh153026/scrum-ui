@@ -1,16 +1,11 @@
-FROM node:12.7
-
-# install chrome for protractor tests
-
-# set working directory
+FROM node:12.7-alpine AS build
 WORKDIR /usr/src/app
-
-
-# install and cache app dependencies
-COPY package.json /app/package.json
-RUN npm install
 COPY . .
-RUN npm install -g @angular/cli@7.3.9 --unsafe
+RUN ng build --prod
 
 # start app
-CMD ["ng" ,"serve"]
+FROM nginx:1.17.1-alpine
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /usr/src/app/dist/scrum-ui /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
