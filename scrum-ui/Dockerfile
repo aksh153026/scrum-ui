@@ -2,7 +2,7 @@ FROM node:12.7-alpine AS build
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install
-RUN npm install -g @angular/cli@7.3.9 
+RUN npm install -g @angular/cli@7.3.9 --unsafe
 RUN ng install
 RUN ng build --prod
 
