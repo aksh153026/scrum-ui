@@ -1,4 +1,4 @@
-FROM node:12.7-alpine
+FROM node:12.7
 
 # install chrome for protractor tests
 
