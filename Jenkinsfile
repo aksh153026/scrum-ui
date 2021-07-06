@@ -221,7 +221,7 @@ pipeline {
 				docker.withRegistry('http://192.168.29.240:8083/', '1234') {
 
 				sh """#!/bin/bash 
-				sudo docker login -u admin -p http://192.168.29.240:8083/
+				
 				        
 				
 				sudo docker run -d -p 4200:80 --name scrum-ui --link scrum-app 192.168.29.240:8083/front-end:${env.BUILD_ID}
