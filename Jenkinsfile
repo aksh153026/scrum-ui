@@ -169,7 +169,8 @@ pipeline {
 				sudo docker container rm -f scrum-ui
 				sudo docker run -i -p 4200:80 --name scrum-ui --link scrum-app 192.168.29.240:8083/front-end:${env.BUILD_ID} 
 				"""
-
+				}
+				}
 			}
     
           
@@ -196,7 +197,8 @@ pipeline {
 				sudo docker container rm -f scrum-ui
 				sudo docker run -i -p 4200:80 --name scrum-ui --link scrum-app 192.168.29.240:8083/front-end:${env.BUILD_ID} 
 				"""
-
+				}
+				}
 			}
     
           
@@ -224,7 +226,8 @@ pipeline {
 				
 				sudo docker run -d -p 4200:80 --name scrum-ui --link scrum-app 192.168.29.240:8083/front-end:${env.BUILD_ID}
 				"""
-
+				}
+				}
 			}
     
           
