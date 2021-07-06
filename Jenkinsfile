@@ -1,11 +1,11 @@
 pipeline {
-    options {
-    skipDefaultCheckout true
-  }
+    
   agent {
       label 'master'
   }
-  
+  options {
+    skipDefaultCheckout true
+  }
   
     tools {
         git 'Default'
