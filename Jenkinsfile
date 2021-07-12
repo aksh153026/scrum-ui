@@ -162,15 +162,12 @@ pipeline {
 			}
       
 			steps{   
-				script {
-				docker.withRegistry('http://192.168.29.240:8083/', '1234') {
+			
 				sh """#!/bin/bash 
-				sudo docker login -u admin -p admin http://192.168.29.240:8083/
 				sudo docker container rm -f scrum-ui
 				sudo docker run -i -p 4200:80 --name scrum-ui --link scrum-app 192.168.29.240:8083/front-end:${env.BUILD_ID} 
 				"""
-				}
-				}
+				
 			}
     
           
@@ -190,15 +187,13 @@ pipeline {
 			}
       
 			steps{   
-				script {
-				docker.withRegistry('http://192.168.29.240:8083/', '1234') {
+			
+				
 				sh """#!/bin/bash 
-				sudo docker login -u admin -p admin http://192.168.29.240:8083/
 				sudo docker container rm -f scrum-ui
 				sudo docker run -i -p 4200:80 --name scrum-ui --link scrum-app 192.168.29.240:8083/front-end:${env.BUILD_ID} 
 				"""
-				}
-				}
+				
 			}
     
           
@@ -217,8 +212,7 @@ pipeline {
 			}
       
 			steps{   
-				script {
-				docker.withRegistry('http://192.168.29.240:8083/', '1234') {
+			
 
 				sh """#!/bin/bash 
 				
@@ -226,8 +220,7 @@ pipeline {
 				
 				sudo docker run -d -p 4200:80 --name scrum-ui --link scrum-app 192.168.29.240:8083/front-end:${env.BUILD_ID}
 				"""
-				}
-				}
+				
 			}
     
           
