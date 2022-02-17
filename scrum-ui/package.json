@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm install && npm audit fix  && npm version minor && ng build --prod && git add .&& git commit -m "version test" && git push origin HEAD:",
+    "build": "npm install && npm audit fix  && npm version minor && ng build --prod && git add .&& git commit -m \"version test\" && git push origin HEAD:main",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
