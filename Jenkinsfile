@@ -16,7 +16,7 @@ pipeline {
 		    
 		           script{
 
-def packageJSON = readJSON file: 'cd scrum-ui\package.json'
+def packageJSON = readJSON file: 'cd scrum-ui\\package.json'
 def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
