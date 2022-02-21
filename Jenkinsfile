@@ -20,8 +20,12 @@ def packageJSON = readJSON file: 'scrum-ui\\package.json'
 def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
+				   
  bat "cd scrum-ui && npm run build"
-         
+      packageJSON = readJSON file: 'scrum-ui\\package.json'
+packageJSONVersion = packageJSON.version
+       build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
+echo build_version   
         }
       }
     }
