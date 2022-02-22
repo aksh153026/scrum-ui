@@ -22,7 +22,7 @@ def packageJSONVersion = packageJSON.version
 echo build_version
 				   
  bat "cd scrum-ui && npm run build"
-				   bat "git add git add --all -- \":!node_modules/*\" \":!scrum-ui/node_modules/*\" \":!scrum-ui/dist/*\" && git commit -m \"push version\" && git push main"
+				   bat "git add git add --all -- \":!node_modules\\*\" \":!scrum-ui\\node_modules\\*\" \":!scrum-ui\\dist\\*\"
       packageJSON = readJSON file: 'scrum-ui\\package.json'
 packageJSONVersion = packageJSON.version
        build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
