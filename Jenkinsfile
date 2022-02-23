@@ -15,6 +15,10 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
             steps {
+		    checkout([$class: 'GitSCM', branches: [[name: '*/main'], [name: '*/dev'], [name: '*/qa']],  doGenerateSubmoduleConfigurations: false, 
+                          extensions: [], 
+                          gitTool: 'Default', userRemoteConfigs: [[credentialsId: 'github_json', url: 'https://github.com/aksh153026/scrum-ui.git']]])
+               
 		    
 		           script{
 
@@ -27,10 +31,7 @@ echo build_version
 				   
 				     
 				           }
-		      checkout([$class: 'GitSCM', branches: [[name: '*/main'], [name: '*/dev'], [name: '*/qa']],  doGenerateSubmoduleConfigurations: false, 
-                          extensions: [], 
-                          gitTool: 'Default', userRemoteConfigs: [[credentialsId: 'github_json', url: 'https://github.com/aksh153026/scrum-ui.git']]])
-               
+		      
                 
 		    withCredentials([gitUsernamePassword(credentialsId: 'github_json',
                  gitToolName: 'Default')]) {
