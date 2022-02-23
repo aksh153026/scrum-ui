@@ -28,7 +28,7 @@ echo build_version
 		    withCredentials([gitUsernamePassword(credentialsId: 'github_json',
                  gitToolName: 'Default')]) {
 			    echo GIT_ASKPASS
-				   bat "git push HEAD:main"
+				   bat "git push origin HEAD:main"
 				   }
       }
     }
