@@ -31,7 +31,7 @@ echo build_version
 		    withCredentials([gitUsernamePassword(credentialsId: 'github_json',
                  gitToolName: 'Default')]) {
 			    echo GIT_ASKPASS
-				   bat "git add --all -- \":!node_modules/*\" && git commit -c user.name='aksh153026' -c user.email='aksh153026@gmail.com' -m \"push version\" && git push origin HEAD:main"
+				   bat "git add --all -- \":!node_modules/*\" && git commit -c user.name=\"aksh153026\" -c user.email=\"aksh153026@gmail.com\" -m \"push version\" && git push origin HEAD:main"
 				   }
       }
     }
