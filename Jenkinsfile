@@ -28,7 +28,7 @@ echo build_version
 		    withCredentials([gitUsernamePassword(credentialsId: 'github_json',
                  gitToolName: 'Default')]) {
 			    echo GIT_ASKPASS
-				   bat "git add --all -- \":!node_modules/*\" && git commit -m \"push version\" && git push"
+				   bat "git push"
 				   }
       }
     }
