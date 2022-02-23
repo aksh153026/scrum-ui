@@ -3,9 +3,7 @@ pipeline {
   agent {
       label 'master'
   }
-  options {
-    skipDefaultCheckout true
-  }
+  
     tools {
         git 'Default'
         nodejs 'NodeJS'
@@ -15,10 +13,7 @@ pipeline {
     stages {
 		stage('Checkout SCM') {
             steps {
-		    checkout([$class: 'GitSCM', branches: [[name: '*/main'], [name: '*/dev'], [name: '*/qa']],  doGenerateSubmoduleConfigurations: false, 
-                          extensions: [], 
-                          gitTool: 'Default', userRemoteConfigs: [[credentialsId: 'github_json', url: 'https://github.com/aksh153026/scrum-ui.git']]])
-               
+		    
 		    
 		           script{
 
@@ -36,7 +31,7 @@ echo build_version
 		    withCredentials([gitUsernamePassword(credentialsId: 'github_json',
                  gitToolName: 'Default')]) {
 			    echo GIT_ASKPASS
-				   bat "git push origin HEAD:main"
+				   bat "git add --all -- \":!node_modules/*\" && git commit -c user.name='aksh153026' -c user.email='aksh153026@gmail.com' -m \"push version\" && git push origin HEAD:main"
 				   }
       }
     }
