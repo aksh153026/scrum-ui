@@ -28,7 +28,7 @@ echo build_version
 				           }
 		      
                 
-	powershell "git add --all -- \":!node_modules/*\" && git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push version\" && git push origin HEAD:main"
+	powershell "git add --all -- \":!node_modules/*\" & git config --global user.name \"aksh153026\" & git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push version\" && git push origin HEAD:main"
 		
       }
     }
