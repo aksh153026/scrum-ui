@@ -28,7 +28,7 @@ echo build_version
 				           }
 
 		
-withCredentials([gitUsernamePassword(credentialsId: 'aksh153026', gitToolName: 'Default')]) {
+withCredentials([gitSshPrivateKey(credentialsId: 'aksh153026', gitToolName: 'Default')]) {
     // some block
 
 echo "hi"
