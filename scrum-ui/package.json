@@ -1,6 +1,6 @@
 {
   "name": "scrum-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,6 @@
     "e2e": "ng e2e",
     "sonar": "sonar-scanner"
   },
-  
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
