@@ -28,11 +28,8 @@ echo build_version
 				           }
 		      
                 
-		   sshagent (credentials: ['aksh153026']) {
-  
-echo "hi"
-
-				   }
+	powershell "git add --all -- \":!node_modules/*\" && git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push version\" && git push origin HEAD:main"
+		
       }
     }
 }
