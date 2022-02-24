@@ -1,7 +1,7 @@
 pipeline {
     
   agent {
-      label 'master'
+      label 'ubuntu_jsos'
   }
   
     tools {
@@ -32,12 +32,13 @@ echo build_version
     // some block
 
 echo "hi"
+sshagent(['vagrant_ubuntu_json_version']) {
+    // some block
 
 
-
-			bat "git add --all -- \":!node_modules/*\" && git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push version\" && git push git@github.com:aksh153026/scrum-ui.git HEAD:main"
+			sh "cd /home/vagrant/jen && git add --all -- \":!node_modules/*\" && git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push version\" && git push git@github.com:aksh153026/scrum-ui.git HEAD:main"
 				   
-	
+}
       }
     }
 }
