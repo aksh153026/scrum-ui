@@ -27,8 +27,9 @@ echo build_version
 				     
 				           }
 
-		   sshagent (credentials: ['aksh153026']) {
-
+		
+withCredentials([gitUsernamePassword(credentialsId: 'aksh153026', gitToolName: 'Default')]) {
+    // some block
 
 echo "hi"
 
