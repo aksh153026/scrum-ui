@@ -1,7 +1,7 @@
 pipeline {
     
   agent {
-      label 'ubuntu_jsos'
+      label 'master'
   }
   
     tools {
@@ -22,7 +22,7 @@ def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
 				   
- sh "cd scrum-ui && export PATH=$PATH:/home/vagrant/node-v12.14.0-linux-x64/bin && npm run build"
+ bat "cd scrum-ui && export PATH=$PATH:/home/vagrant/node-v12.14.0-linux-x64/bin && npm run build"
 				   
 				     
 				           }
