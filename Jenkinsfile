@@ -22,7 +22,7 @@ pipeline
 			{
 				script
 				{
-					def i=1
+					i=1
 					error("fun")
 					def packageJSON = readJSON file: 'scrum-ui\\package.json'
 					def packageJSONVersion = packageJSON.version
