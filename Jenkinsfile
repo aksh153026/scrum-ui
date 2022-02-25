@@ -28,7 +28,7 @@ pipeline
 						echo lastCommit	
 						if (lastCommit.contains('push_package.json_version'))
 						{
-							currentBuild.result = 'SuCCESS' //ABORTED
+							currentBuild.result = 'ABORTED' //ABORTED
 							//error('ALread Done')
 						}
 					}
