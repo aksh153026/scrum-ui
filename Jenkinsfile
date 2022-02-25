@@ -22,9 +22,9 @@ def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
 				   
- bat "cd scrum-ui && export PATH=$PATH:/home/vagrant/node-v12.14.0-linux-x64/bin && npm run build"
+ bat "cd scrum-ui && npm run build"
 				   
-				     
+				  //   && export PATH=$PATH:/home/vagrant/node-v12.14.0-linux-x64/bin 
 				           }
 
 		
