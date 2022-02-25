@@ -24,7 +24,8 @@ pipeline
 				{
 					try
 					{
-						error("fun")
+						currentBuild.result = 'ABORTED'
+						error('Stopping early…')
 						def packageJSON = readJSON file: 'scrum-ui\\package.json'
 						def packageJSONVersion = packageJSON.version
 						def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
