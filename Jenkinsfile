@@ -22,21 +22,19 @@ def packageJSONVersion = packageJSON.version
          def build_version = packageJSONVersion + "."+ env.BRANCH_NAME+"."+env.BUILD_ID
 echo build_version
 				   
- bat "cd scrum-ui && export PATH=$PATH:/home/vagrant/node-v12.14.0-linux-x64/bin && npm run build"
-				   
+ bat "cd scrum-ui  && npm run build"
+	//&& export PATH=$PATH:/home/vagrant/node-v12.14.0-linux-x64/bin			   
 				     
 				           }
 
 		
 
     // some block
-
-echo "hi"
 sshagent(['vagrant_ubuntu_json_version']) {
     // some block
 
 
-			sh "pwd && git add --all -- \":!node_modules/*\" && git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push version\" && git push git@github.com:aksh153026/scrum-ui.git HEAD:main"
+			sh "git add --all -- \":!node_modules/*\" && git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push version\" && git push git@github.com:aksh153026/scrum-ui.git HEAD:main"
 				   
 }
       }
