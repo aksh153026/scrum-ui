@@ -26,7 +26,7 @@ pipeline
 					{
 						lastCommit = sh([script: 'git log -1', returnStdout: true])
 						echo lastCommit	
-						currentBuild.result = 'ABORTED'
+						currentBuild.result = 'SUCCESS'
 						error('Stopping early…')
 					}
 					catch(e)
