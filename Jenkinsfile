@@ -34,7 +34,7 @@ echo build_version
     // some block
 //sshagent(['vagrant_ubuntu_json_version']) {
 
-			powershell "git add --all -- \":!node_modules/*\" && git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" && git commit -m \"push_version\" && git push git@github.com:aksh153026/scrum-ui.git HEAD:main"
+			powershell "git add --all -- \":!node_modules/*\";git config --global user.name \"aksh153026\" && git config --global user.email \"aksh153026@gmail.com\" ; git commit -m \"push_version\" ; git push git@github.com:aksh153026/scrum-ui.git HEAD:main"
 				   
 	//    }
       }
