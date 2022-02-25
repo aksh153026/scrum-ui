@@ -37,7 +37,7 @@ pipeline
 					}
 					catch(e)
 					{
-						echo e
+						echo hi
 					}					
 				}
 			}
