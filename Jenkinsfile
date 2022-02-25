@@ -60,8 +60,8 @@ pipeline
 		}		
 	}
 }
-// sshagent(['vagrant_ubuntu_json_version']) {		
-	 // }
+/* sshagent(['vagrant_ubuntu_json_version']) {		
+	 }*/
 			 
 				   	    
 	   	
